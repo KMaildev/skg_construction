@@ -192,10 +192,8 @@
                                 </thead>
                                 <tbody id="VariableAssetsTemporaries"></tbody>
                             </table>
-                        </div>
 
-                        <div class="col-md-12">
-                            <input type="submit" value="Save" class="btn btn-primary btn-sm">
+                            <input type="submit" value="Confirm" class="btn btn-primary">
                         </div>
                     </form>
                 </div>
@@ -296,7 +294,7 @@
             var qty = $(this).val();
 
             if (qty == null || qty == "" || isNaN(qty)) {
-                alert("Please enter numeric value only.");
+                // alert("Please enter numeric value only.");
                 return false;
             }
 

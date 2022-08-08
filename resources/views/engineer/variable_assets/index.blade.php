@@ -128,7 +128,6 @@
                                 <table style="width: 100%">
                                     <tr>
                                         <th> Items </th>
-                                        <th> Size </th>
                                         <th> Unit </th>
                                         <th> Qty </th>
                                     </tr>
@@ -136,9 +135,6 @@
                                         <tr>
                                             <td style="text-align: left;">
                                                 {{ $value->variable_assets_table->item_name ?? '' }}
-                                            </td>
-                                            <td style="text-align: center;">
-                                                {{ $value->size ?? '' }}
                                             </td>
                                             <td style="text-align: center;">
                                                 {{ $value->variable_assets_table->unit ?? '' }}
