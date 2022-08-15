@@ -306,4 +306,26 @@ Route::middleware('auth')->group(function () {
     Route::get('get_variable_assets_temporarie', array('as' => 'get_variable_assets_temporarie', 'uses' => 'General\VariableAssetsTemporaryController@index'));
     Route::get('remove_variable_assets_temporarie/{id}', array('as' => 'remove_variable_assets_temporarie', 'uses' => 'General\VariableAssetsTemporaryController@remove_variable_assets_temporarie'));
     Route::post('update_variable_assets_temporarie', 'General\VariableAssetsTemporaryController@update_variable_assets_temporarie');
+
+
+
+    // BQ 
+    Route::resource('bq', 'Bq\BqController');
+    Route::get('bq_create/{id}', [
+        'as' => 'bq_create',
+        'uses' => 'Bq\BqController@bq_create'
+    ]);
+
+    Route::post('add_variable_bq_temporaries', 'General\VariableBqTemporaryController@store');
+    Route::get('get_variable_bq_temporaries', array('as' => 'get_variable_bq_temporaries', 'uses' => 'General\VariableBqTemporaryController@index'));
+    Route::get('remove_variable_bq_temporaries/{id}', array('as' => 'remove_variable_bq_temporaries', 'uses' => 'General\VariableBqTemporaryController@remove_variable_assets_temporarie'));
+    Route::post('update_variable_bq_temporaries', 'General\VariableBqTemporaryController@update_variable_bq_temporaries');
+    Route::post('update_rate_variable_bq_temporaries', 'General\VariableBqTemporaryController@update_rate_variable_bq_temporaries');
+
+
+    Route::resource('variable_request_ssd', 'VariableRequest\VariableRequestSsdController');
+    Route::get('get_variable_request_ssd', [
+        'as' => 'get_variable_request_ssd',
+        'uses' => 'VariableRequest\VariableRequestSsdController@getVariableRequest'
+    ]);
 });

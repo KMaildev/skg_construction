@@ -36,6 +36,7 @@ class ComposerStaticInita824448a002a3fe67d28a9c81a6aa012
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '72b1e3f4a2af9b30b3f137b3ec2057fc' => __DIR__ . '/..' . '/spatie/laravel-activitylog/src/helpers.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
+        '0b47d6d4a00ca9112ba3953b49e7c9a4' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -46,6 +47,10 @@ class ComposerStaticInita824448a002a3fe67d28a9c81a6aa012
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'Y' => 
+        array (
+            'Yajra\\DataTables\\' => 17,
         ),
         'W' => 
         array (
@@ -191,6 +196,10 @@ class ComposerStaticInita824448a002a3fe67d28a9c81a6aa012
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'Yajra\\DataTables\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src',
         ),
         'Whoops\\' => 
         array (
@@ -577,6 +586,7 @@ class ComposerStaticInita824448a002a3fe67d28a9c81a6aa012
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\Bq\\BqController' => __DIR__ . '/../..' . '/app/Http/Controllers/Bq/BqController.php',
         'App\\Http\\Controllers\\ChangePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/ChangePasswordController.php',
         'App\\Http\\Controllers\\ContractController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContractController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -601,6 +611,7 @@ class ComposerStaticInita824448a002a3fe67d28a9c81a6aa012
         'App\\Http\\Controllers\\Fixedassets\\UnusableFixedAssetsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Fixedassets/UnusableFixedAssetsController.php',
         'App\\Http\\Controllers\\FloorPlanController' => __DIR__ . '/../..' . '/app/Http/Controllers/FloorPlanController.php',
         'App\\Http\\Controllers\\General\\VariableAssetsTemporaryController' => __DIR__ . '/../..' . '/app/Http/Controllers/General/VariableAssetsTemporaryController.php',
+        'App\\Http\\Controllers\\General\\VariableBqTemporaryController' => __DIR__ . '/../..' . '/app/Http/Controllers/General/VariableBqTemporaryController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\HrDashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/HrDashboardController.php',
         'App\\Http\\Controllers\\Inventory\\AcceptRejectStatusController' => __DIR__ . '/../..' . '/app/Http/Controllers/Inventory/AcceptRejectStatusController.php',
@@ -644,6 +655,7 @@ class ComposerStaticInita824448a002a3fe67d28a9c81a6aa012
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\StructureDesignController' => __DIR__ . '/../..' . '/app/Http/Controllers/StructureDesignController.php',
         'App\\Http\\Controllers\\StructureDesignFeesController' => __DIR__ . '/../..' . '/app/Http/Controllers/StructureDesignFeesController.php',
+        'App\\Http\\Controllers\\VariableRequest\\VariableRequestSsdController' => __DIR__ . '/../..' . '/app/Http/Controllers/VariableRequest/VariableRequestSsdController.php',
         'App\\Http\\Controllers\\Warehouse\\ManageWareHousePlanController' => __DIR__ . '/../..' . '/app/Http/Controllers/Warehouse/ManageWareHousePlanController.php',
         'App\\Http\\Controllers\\hr\\EngineerController' => __DIR__ . '/../..' . '/app/Http/Controllers/hr/EngineerController.php',
         'App\\Http\\Controllers\\hr\\LeaveController' => __DIR__ . '/../..' . '/app/Http/Controllers/hr/LeaveController.php',
@@ -719,6 +731,7 @@ class ComposerStaticInita824448a002a3fe67d28a9c81a6aa012
         'App\\Http\\Requests\\UpdateUnitsOfMeasure' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateUnitsOfMeasure.php',
         'App\\Http\\Requests\\UpdateVariableAssets' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateVariableAssets.php',
         'App\\Http\\Requests\\VariableStoreReceivedByEngineer' => __DIR__ . '/../..' . '/app/Http/Requests/VariableStoreReceivedByEngineer.php',
+        'App\\Model\\VariableBqTemporary' => __DIR__ . '/../..' . '/app/Model/VariableBqTemporary.php',
         'App\\Models\\AcceptRejectStatus' => __DIR__ . '/../..' . '/app/Models/AcceptRejectStatus.php',
         'App\\Models\\ApprovedBy' => __DIR__ . '/../..' . '/app/Models/ApprovedBy.php',
         'App\\Models\\ArchiExteriorDesign' => __DIR__ . '/../..' . '/app/Models/ArchiExteriorDesign.php',
@@ -5591,6 +5604,22 @@ class ComposerStaticInita824448a002a3fe67d28a9c81a6aa012
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+        'Yajra\\DataTables\\ApiResourceDataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/ApiResourceDataTable.php',
+        'Yajra\\DataTables\\CollectionDataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/CollectionDataTable.php',
+        'Yajra\\DataTables\\Contracts\\DataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Contracts/DataTable.php',
+        'Yajra\\DataTables\\Contracts\\Formatter' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Contracts/Formatter.php',
+        'Yajra\\DataTables\\DataTableAbstract' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/DataTableAbstract.php',
+        'Yajra\\DataTables\\DataTables' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/DataTables.php',
+        'Yajra\\DataTables\\DataTablesServiceProvider' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/DataTablesServiceProvider.php',
+        'Yajra\\DataTables\\EloquentDataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/EloquentDataTable.php',
+        'Yajra\\DataTables\\Exceptions\\Exception' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Exceptions/Exception.php',
+        'Yajra\\DataTables\\Facades\\DataTables' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Facades/DataTables.php',
+        'Yajra\\DataTables\\Processors\\DataProcessor' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Processors/DataProcessor.php',
+        'Yajra\\DataTables\\Processors\\RowProcessor' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Processors/RowProcessor.php',
+        'Yajra\\DataTables\\QueryDataTable' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/QueryDataTable.php',
+        'Yajra\\DataTables\\Utilities\\Config' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Utilities/Config.php',
+        'Yajra\\DataTables\\Utilities\\Helper' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Utilities/Helper.php',
+        'Yajra\\DataTables\\Utilities\\Request' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/Utilities/Request.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

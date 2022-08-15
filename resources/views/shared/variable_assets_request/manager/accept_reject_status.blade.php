@@ -44,6 +44,7 @@
     </a>
 @endif
 
+
 <div class="col-lg-4 col-md-6">
     {{-- action="{{ route('variable_accept_reject_status.index') }}" method="POST" id="create-form" --}}
     <form class="accept_reject_save" action="#" method="POST" id="create-form">

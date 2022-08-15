@@ -56,6 +56,8 @@
 <script src="{{ asset('install/datetime/jquery.datetimepicker.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
 
+<script type="text/javascript" src="{{ asset('assets/vendor/libs/datatables/jquery.dataTables.js') }}"></script>
+
 @yield('script')
 
 
@@ -112,7 +114,6 @@
             prevTr = tr
         }
     }
-
 
 
     $(document).on("click", ".rm", function() {

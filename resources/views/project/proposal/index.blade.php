@@ -213,6 +213,15 @@
                                                         Action
                                                     </button>
                                                     <ul class="dropdown-menu">
+
+                                                        <li>
+                                                            <a class="dropdown-item"
+                                                                href="{{ route('bq_create', $project->id) }}">
+                                                                BQ
+                                                            </a>
+                                                        </li>
+
+
                                                         <li>
                                                             <a class="dropdown-item"
                                                                 href="{{ route('project.edit', $project->id) }}">Remark</a>

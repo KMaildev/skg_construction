@@ -19,7 +19,8 @@
         "proengsoft/laravel-jsvalidation": "^4.7",
         "spatie/laravel-activitylog": "^3.17",
         "spatie/laravel-permission": "^5.5",
-        "unisharp/laravel-filemanager": "^2.5"
+        "unisharp/laravel-filemanager": "^2.5",
+        "yajra/laravel-datatables-oracle": "^9.21"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
