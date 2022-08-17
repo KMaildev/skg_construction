@@ -1,7 +1,7 @@
 @extends('layouts.menus.engineer')
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-8 col-sm-12">
+        <div class="col-md-8 col-lg-8 col-sm-8">
             <div class="card">
                 <div class="card-body">
                     <div class="card-title header-elements">
@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-lg-4 col-sm-12">
+        <div class="col-md-4 col-lg-4 col-sm-4">
             <div class="col-xxl">
                 <div class="card mb-4">
                     <h5 class="card-header">Variable</h5>
@@ -111,7 +111,7 @@
                                             style="font-weight: bold">Site</label>
                                         <select class="select2 form-select form-select" data-allow-clear="false"
                                             name="customer_id">
-                                            <option value="">--Please Site--</option>
+                                            <option value="">--Please Select--</option>
                                             @foreach ($projects_users as $key => $value)
                                                 @foreach ($value->projects as $project)
                                                     <option value="{{ $project->customer_table->id ?? '' }}">
@@ -131,8 +131,17 @@
                                     <div class="">
                                         <label class="form-label" for="flatpickr-human-friendly"
                                             style="font-weight: bold">Work Scope</label>
-                                        <input type="text" class="form-control" name="work_scope" />
-                                        @error('work_scope')
+                                        <select class="select2 form-select form-select" data-allow-clear="false"
+                                            name="work_scope_id">
+                                            <option value="">--Please Select Work--</option>
+                                            @foreach ($work_scopes as $key => $work_scope)
+                                                <option value="{{ $work_scope->id ?? '' }}">
+                                                    {{ $work_scope->title ?? '' }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+
+                                        @error('work_scope_id')
                                             <div class="invalid-feedback"> {{ $message }} </div>
                                         @enderror
                                     </div>
@@ -258,7 +267,8 @@
                         // Qty 
                         temporarie_table += '<td style="text-align: right">'
                         temporarie_table +=
-                            '<input style="width: 100%;" type="text" name="quantity[]" value="' + value.qty + '" required class="update_item" data-id="' +
+                            '<input style="width: 100%;" type="text" name="quantity[]" value="' + value
+                            .qty + '" required class="update_item" data-id="' +
                             value.id + '" />'
                         temporarie_table += '</td>'
 

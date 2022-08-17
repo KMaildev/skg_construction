@@ -254,7 +254,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('received_by_store_manager', 'Inventory\ReceivedByStoreManagerController');
     Route::resource('variable_assets', 'Inventory\VariableAssetsController');
     Route::post('variable_assets_sortable', 'Inventory\VariableAssetsController@variable_assets_sortable');
-
+    Route::get('get_variable_assets_ajax/{id}', array('as' => 'get_variable_assets_ajax', 'uses' => 'Inventory\VariableAssetsController@getVariableAssetsAjax'));
 
     //Engineering
     Route::resource('engineerdashboard', 'Engineer\EngineerDashboardController');
@@ -308,14 +308,30 @@ Route::middleware('auth')->group(function () {
     Route::post('update_variable_assets_temporarie', 'General\VariableAssetsTemporaryController@update_variable_assets_temporarie');
 
 
-
     // BQ 
+    Route::resource('bq_dashboard', 'Bq\BqDashboardController');
+    Route::resource('project_bq', 'Bq\ProjectBqController');
     Route::resource('bq', 'Bq\BqController');
     Route::get('bq_create/{id}', [
         'as' => 'bq_create',
         'uses' => 'Bq\BqController@bq_create'
     ]);
+    Route::get('project_bq_show/{id}/{project_id}/{work_scope_id}/{overall_status}', [
+        'as' => 'project_bq_show',
+        'uses' => 'Bq\ProjectBqController@project_bq_show'
+    ]);
 
+
+    Route::resource('bq_temporary', 'Bq\BqTemporaryController');
+    Route::post('store_bq_temporary', 'Bq\BqTemporaryController@store');
+    Route::get('get_bq_temporary', array('as' => 'get_bq_temporary', 'uses' => 'Bq\BqTemporaryController@index'));
+    Route::get('remove_bq_temporaries/{id}', array('as' => 'remove_bq_temporaries', 'uses' => 'Bq\BqTemporaryController@remove_bq_temporaries'));
+
+    // Work Scope 
+    Route::resource('work_scope', 'Bq\WorkScopeController');
+
+
+    // No Using 
     Route::post('add_variable_bq_temporaries', 'General\VariableBqTemporaryController@store');
     Route::get('get_variable_bq_temporaries', array('as' => 'get_variable_bq_temporaries', 'uses' => 'General\VariableBqTemporaryController@index'));
     Route::get('remove_variable_bq_temporaries/{id}', array('as' => 'remove_variable_bq_temporaries', 'uses' => 'General\VariableBqTemporaryController@remove_variable_assets_temporarie'));

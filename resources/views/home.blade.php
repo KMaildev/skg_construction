@@ -10,8 +10,9 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <div class="avatar avatar-md mx-auto mb-3">
-                                        <span class="avatar-initial rounded-circle bg-label-danger"><i
-                                                class='fa fa-chart-bar fs-3'></i></span>
+                                        <span class="avatar-initial rounded-circle bg-label-danger">
+                                            <i class='fa fa-chart-bar fs-3'></i>
+                                        </span>
                                     </div>
                                     <span class="d-block mb-1 text-nowrap">Warehouse</span>
                                 </div>
@@ -26,8 +27,9 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <div class="avatar avatar-md mx-auto mb-3">
-                                        <span class="avatar-initial rounded-circle bg-label-primary"><i
-                                                class='fa fa-building fs-3'></i></span>
+                                        <span class="avatar-initial rounded-circle bg-label-primary">
+                                            <i class='fa fa-building fs-3'></i>
+                                        </span>
                                     </div>
                                     <span class="d-block mb-1 text-nowrap">Project</span>
                                 </div>
@@ -36,8 +38,25 @@
                     </div>
                 @endcan
 
+                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
+                    <a href="{{ route('bq_dashboard.index') }}">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="avatar avatar-md mx-auto mb-3">
+                                    <span class="avatar-initial rounded-circle bg-label-primary">
+                                        <i class='fa fa-check fs-3'></i>
+                                    </span>
+                                </div>
+                                <span class="d-block mb-1 text-nowrap">
+                                    BQ
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
                 @can('accept_purchase_module')
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-4">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-4" hidden>
                         <a href="{{ route('fixed_assets_purchase.index') }}">
                             <div class="card">
                                 <div class="card-body text-center">
@@ -147,8 +166,9 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <div class="avatar avatar-md mx-auto mb-3">
-                                        <span class="avatar-initial rounded-circle bg-label-warning"><i
-                                                class='bx bx-dock-top fs-3'></i></span>
+                                        <span class="avatar-initial rounded-circle bg-label-warning">
+                                            <i class='bx bx-dock-top fs-3'></i>
+                                        </span>
                                     </div>
                                     <span class="d-block mb-1 text-nowrap">File Manager</span>
                                 </div>

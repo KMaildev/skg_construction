@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Engineer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreVariableRequestInfo;
 use App\Models\FixedAssets;
+use App\Models\Projects;
 use App\Models\VariableAssets;
 use App\Models\VariableAssetsTemporary;
 use App\Models\VariableRequestInfo;
 use App\Models\VariableRequestItem;
+use App\Models\WorkScope;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -43,7 +45,9 @@ class EngineerVariableAssetsController extends Controller
             ->groupBy('category')
             ->get();
         $variable_assets = VariableAssets::orderBy('display_order', 'ASC')->get();
-        return view('engineer.variable_assets.create', compact('variable_assets', 'projects_users', 'request_infos', 'categories', 'variable_assets'));
+
+        $work_scopes = WorkScope::all();
+        return view('engineer.variable_assets.create', compact('variable_assets', 'projects_users', 'request_infos', 'categories', 'variable_assets', 'work_scopes'));
     }
 
     /**
@@ -65,11 +69,25 @@ class EngineerVariableAssetsController extends Controller
         $variable_asset->code = $increment;
         $variable_asset->date = $request->date;
         $variable_asset->need_date = $request->need_date;
-        $variable_asset->work_scope = $request->work_scope;
         $variable_asset->customer_id = $request->customer_id;
         $variable_asset->engineer_id = $user_id;
+
+        // Project Id 
+        $customer_id = $request->customer_id;
+        $project = Projects::where('customer_id', $customer_id)->first();
+        $project_id = $project->id;
+        $variable_asset->project_id = $project_id;
+
+        // Work Scope Id 
+        $work_scope_id = $request->work_scope_id;
+        $work_scope = WorkScope::findOrFail($work_scope_id);
+        $variable_asset->work_scope = $work_scope->title;
+        $variable_asset->work_scope_id = $request->work_scope_id;
+
         $variable_asset->save();
         $variable_asset_id = $variable_asset->id;
+        $project_id = $variable_asset->project_id;
+        $work_scope_id = $variable_asset->work_scope_id;
 
         foreach ($request->variable_asset_id as $key => $variable_asset) {
             VariableRequestItem::create([
@@ -78,9 +96,10 @@ class EngineerVariableAssetsController extends Controller
                 'size' => '',
                 'user_id' => $user_id,
                 'variable_request_info_id' => $variable_asset_id,
+                'project_id' => $project_id,
+                'work_scope_id' => $work_scope_id,
             ]);
         }
-
         VariableAssetsTemporary::where('session_id', session()->getId())->delete();
         return redirect()->back()->with('success', 'Your processing has been completed.');
     }

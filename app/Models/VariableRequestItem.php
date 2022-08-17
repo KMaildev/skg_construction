@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class VariableRequestItem extends Model
 {
 
-    protected $fillable = ['variable_asset_id', 'quantity', 'user_id', 'variable_request_info_id', 'created_at', 'updated_at', 'size'];
+    protected $fillable = ['variable_asset_id', 'quantity', 'user_id', 'variable_request_info_id', 'created_at', 'updated_at', 'size', 'project_id', 'work_scope_id'];
 
 
     public function variable_request_infos_table()

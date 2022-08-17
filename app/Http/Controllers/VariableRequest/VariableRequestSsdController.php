@@ -24,6 +24,7 @@ class VariableRequestSsdController extends Controller
     public function getVariableRequest(Request $request)
     {
         $data = VariableRequestInfo::with('variable_request_items_table')
+            ->orderBy('id', 'DESC')
             ->get()
             ->where('request_status', NULL);
         return Datatables::of($data)

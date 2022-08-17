@@ -169,4 +169,16 @@ class VariableAssetsController extends Controller
         }
         return response('Update Successfully.', 200);
     }
+
+
+    /**
+     * Get Ajax Request and restun Data
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getVariableAssetsAjax($id)
+    {
+        $variable_assets_data = VariableAssets::findOrFail($id);
+        return json_encode($variable_assets_data);
+    }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreVariableRequestInfo extends FormRequest
+class StoreWorkScope extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,7 @@ class StoreVariableRequestInfo extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required',
-            'customer_id' => 'required',
-            'need_date' => 'required',
-            'work_scope_id' => 'required',
-            'quantity.*' => 'required|numeric',
+            'title' => 'required',
         ];
     }
 }

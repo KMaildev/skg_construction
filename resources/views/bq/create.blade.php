@@ -4,7 +4,7 @@
         <span class="text-muted fw-light">Project / BQ / </span> {{ $project->customer_table->project_code ?? '' }}
     </h4>
     <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-6 col-sm-12">
+        <div class="col-md-6 col-lg-6 col-sm-6">
             <div class="card">
                 <div class="card-body">
                     <div class="card-title header-elements">
@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6">
             @include('bq.material')
             @include('bq.labour')
         </div>
