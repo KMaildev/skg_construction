@@ -214,7 +214,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu">
 
-                                                        <li>
+                                                        <li hidden>
                                                             <a class="dropdown-item"
                                                                 href="{{ route('bq_create', $project->id) }}">
                                                                 BQ
